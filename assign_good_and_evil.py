@@ -1,4 +1,5 @@
 from collections import deque
+import dsc40graph
 
 def assign_good_and_evil(graph):
 
@@ -24,3 +25,14 @@ def assign_good_and_evil(graph):
                     if label[v] == label[u]:
                         return None
     return label
+
+def main():
+    example_graph = dsc40graph.UndirectedGraph()
+    example_graph.add_edge('Michigan', 'OSU')
+    example_graph.add_edge('USC', 'OSU')
+    example_graph.add_edge('USC', 'UCB')
+    example_graph.add_node('UCSD')
+    print(assign_good_and_evil(example_graph))
+
+if __name__ == "__main__":
+    main()
